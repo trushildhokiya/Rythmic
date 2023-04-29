@@ -1,20 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useEffect , useState } from 'react';
+import {  Text, View } from 'react-native';
+import LoadUp from './src/screens/LoadUp';
 
 export default function App() {
+
+  const [load,setLoad] = useState(true)
+  useEffect(()=>{
+    setTimeout(()=>{
+      setLoad(false);
+    },5000)
+  },[]);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View className="" >
+      {load ? <LoadUp/>: <Text>Bye</Text>}
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
