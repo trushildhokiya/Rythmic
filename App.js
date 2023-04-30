@@ -11,7 +11,7 @@ export default function App() {
   useEffect(()=>{
     setTimeout(()=>{
       setLoad(false)
-    },5000)
+    },3000)
   },[])
 
   const Stack = createNativeStackNavigator();
