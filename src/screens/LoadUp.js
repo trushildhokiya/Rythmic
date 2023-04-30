@@ -1,4 +1,4 @@
-import { View, Text, ImageBackground, Image } from 'react-native'
+import { View, Text, Image } from 'react-native'
 import React from 'react'
 import Headphones from '../../assets/headphones.png';
 import { BarIndicator} from 'react-native-indicators';
