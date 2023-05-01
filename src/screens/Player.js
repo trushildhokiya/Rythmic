@@ -1,5 +1,5 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import React, {useEffect, useState } from 'react'
 import Footer from '../components/Footer'
 import data from '../data/data'
 import Slider from '@react-native-community/slider';
@@ -9,10 +9,10 @@ import { Audio } from 'expo-av';
 const Player = ({ navigation }) => {
   const [count, setCount] = useState(0);
   const [playing, setPlaying] = useState(false);
+  const [duration,setDuration] = useState(0)
   const limit = data.length;
-
+  
   const sound = React.useRef(new Audio.Sound());
-
   const handlePlayPause = async () => {
     if (playing == false) {
       setPlaying(!playing);
@@ -24,9 +24,12 @@ const Player = ({ navigation }) => {
     }
     else {
       setPlaying(!playing)
-      sound.current.pauseAsync()
+      sound.current.pauseAsync();
+
     }
   }
+
+  
 
   async function handlePrevious() {
     if (count != 0) {
@@ -52,7 +55,7 @@ const Player = ({ navigation }) => {
         <Text className='text-lg  text-black font-bold'>{data[count].singer}</Text>
         <Text>{count}</Text>
         <View>
-          <Slider minimumValue={0} maximumValue={1} style={{ width: 350, height: 50, }} />
+          <Slider minimumValue={0} maximumValue={1} value={0} style={{ width: 350, height: 50, }} />
           <View className='flex flex-row -mt-6 p-5 justify-between'>
             <Text>0:00</Text>
             <Text>{data[count].duration}</Text>
