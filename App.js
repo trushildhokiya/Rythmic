@@ -18,7 +18,7 @@ export default function App() {
   return (
     <NavigationContainer>
     {load? <LoadUp/> : null}
-      <Stack.Navigator initialRouteName='playlist'>
+      <Stack.Navigator initialRouteName='player'>
         <Stack.Screen name='playlist' component={Musics} options={{headerShown:false, animation:'fade'}}/>
         <Stack.Screen name='player' component={Player} options={{headerShown:false, animation:'fade'}}/>
         <Stack.Screen name='about' component={About} options={{headerShown:false,  animation:'fade'}}/>

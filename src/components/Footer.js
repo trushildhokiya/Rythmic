@@ -6,11 +6,11 @@ const Footer = ({navigation}) => {
   return (
     <View className='absolute bottom-0 p-5 bg-[#6BA7CC] w-full rounded-t-[30]'>
       <View className='flex flex-row flex-1 justify-around items-center'>
-        <TouchableOpacity
+        {/* <TouchableOpacity
         onPress={()=>navigation.navigate('playlist')}
         >
           <Fontisto name='play-list' size={30} />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <TouchableOpacity
         onPress={()=>navigation.navigate('player')}
         >
